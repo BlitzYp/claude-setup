@@ -1,0 +1,2 @@
+# Plugin marketplaces to add (GitHub owner/repo or URL), one per line.
+anthropics/claude-plugins-official

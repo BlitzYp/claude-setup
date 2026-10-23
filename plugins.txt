@@ -1,0 +1,2 @@
+# Plugins to install, as plugin@marketplace, one per line.
+mattpocock-skills@claude-plugins-official
