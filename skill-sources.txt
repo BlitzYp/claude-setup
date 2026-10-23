@@ -1,0 +1,3 @@
+# Skills in skills/ that come from someone else's repo, as "<repo url> <skill name>", one per line.
+# The update scripts re-fetch these and commit any changes.
+https://github.com/cursor/plugins thermo-nuclear-code-quality-review
