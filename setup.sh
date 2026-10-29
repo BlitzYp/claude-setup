@@ -34,4 +34,16 @@ if [ -d "$repo/skills" ]; then
   done
 fi
 
+# Offer the Jitbit MCP once per machine. Either answer is remembered; run add-jitbit-mcp.sh to add it later.
+asked="$HOME/.claude/.jitbit-mcp-asked"
+if [ ! -e "$asked" ] && [ -t 0 ] && ! claude mcp get jitbit >/dev/null 2>&1; then
+  echo; echo "== Jitbit MCP"
+  read -rp "Add the Jitbit MCP server? [y/N] " answer
+  mkdir -p "$HOME/.claude" && touch "$asked"
+  case "$answer" in
+    [yY]*) bash "$repo/add-jitbit-mcp.sh" ;;
+    *) echo "Skipped. Run add-jitbit-mcp.sh if you want it later." ;;
+  esac
+fi
+
 echo; echo "Done. Restart Claude Code to pick up the changes."

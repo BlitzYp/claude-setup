@@ -10,6 +10,7 @@ My Claude Code plugins and skills, so any machine can be brought in sync with on
 | `skill-sources.txt` | Skills in `skills/` that come from other repos (`<repo url> <skill name>`) |
 | `setup.ps1` / `setup.sh` | Installs Claude Code if missing, then applies all of the above |
 | `update.ps1` / `update.sh` | Updates plugins and third-party skills, pushes skill changes, then runs setup |
+| `add-jitbit-mcp.ps1` / `add-jitbit-mcp.sh` | Adds the Jitbit MCP server, prompting for your token |
 
 ## Set up a new machine
 
@@ -63,6 +64,30 @@ bash ~/claude-setup/update.sh
 ```
 
 Restart Claude Code afterwards to load updated plugins.
+
+## Jitbit MCP
+
+The first time `setup` runs on a machine (including from `update`), it asks whether to add the
+Jitbit MCP server and, if yes, asks you to paste your token. It only asks once per machine,
+whichever way you answer (remembered in `~/.claude/.jitbit-mcp-asked`), and doesn't ask at all
+if `jitbit` is already configured.
+
+To add it later, or to replace the token:
+
+**Windows:**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File $HOME\claude-setup\add-jitbit-mcp.ps1
+```
+
+**macOS / Linux:**
+
+```bash
+bash ~/claude-setup/add-jitbit-mcp.sh
+```
+
+The server is added at user scope, so it works in every project. The token is stored in
+`~/.claude.json` on that machine and is never committed to this repo.
 
 ## Adding something new
 

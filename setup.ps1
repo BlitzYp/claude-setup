@@ -38,4 +38,20 @@ Get-ChildItem $skillsSrc -Directory -ErrorAction SilentlyContinue | ForEach-Obje
     Copy-Item $_.FullName $skillsDst -Recurse -Force
 }
 
+# Offer the Jitbit MCP once per machine. Either answer is remembered; run add-jitbit-mcp.ps1 to add it later.
+$asked = Join-Path $env:USERPROFILE '.claude\.jitbit-mcp-asked'
+if (-not (Test-Path $asked) -and -not [Console]::IsInputRedirected) {
+    claude mcp get jitbit *> $null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "`n== Jitbit MCP"
+        $answer = Read-Host "Add the Jitbit MCP server? [y/N]"
+        New-Item -ItemType File -Force $asked | Out-Null
+        if ($answer -match '^[yY]') {
+            & (Join-Path $repo 'add-jitbit-mcp.ps1')
+        } else {
+            Write-Host "Skipped. Run add-jitbit-mcp.ps1 if you want it later."
+        }
+    }
+}
+
 Write-Host "`nDone. Restart Claude Code to pick up the changes."
