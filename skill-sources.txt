@@ -1,3 +1,30 @@
 # Skills in skills/ that come from someone else's repo, as "<repo url> <skill name>", one per line.
 # The update scripts re-fetch these and commit any changes.
 https://github.com/cursor/plugins thermo-nuclear-code-quality-review
+https://github.com/mattpocock/skills ask-matt
+https://github.com/mattpocock/skills diagnosing-bugs
+https://github.com/mattpocock/skills grill-with-docs
+https://github.com/mattpocock/skills triage
+https://github.com/mattpocock/skills improve-codebase-architecture
+https://github.com/mattpocock/skills setup-matt-pocock-skills
+https://github.com/mattpocock/skills tdd
+https://github.com/mattpocock/skills to-spec
+https://github.com/mattpocock/skills to-tickets
+https://github.com/mattpocock/skills wayfinder
+https://github.com/mattpocock/skills implement
+https://github.com/mattpocock/skills implement-spec
+https://github.com/mattpocock/skills prototype
+https://github.com/mattpocock/skills research
+https://github.com/mattpocock/skills domain-modeling
+https://github.com/mattpocock/skills codebase-design
+https://github.com/mattpocock/skills code-review
+https://github.com/mattpocock/skills pr
+https://github.com/mattpocock/skills retro
+https://github.com/mattpocock/skills wizard
+https://github.com/mattpocock/skills grill-me
+https://github.com/mattpocock/skills grilling
+https://github.com/mattpocock/skills handoff
+https://github.com/mattpocock/skills teach
+https://github.com/mattpocock/skills to-questionnaire
+https://github.com/mattpocock/skills wait-what
+https://github.com/mattpocock/skills writing-for-agents
